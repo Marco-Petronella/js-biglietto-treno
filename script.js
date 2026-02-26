@@ -16,5 +16,11 @@
 
 const km = prompt("Quanti chilometri percorrere?");
 const age = prompt("Qual è l'età del viaggiatore?")
-
-console.log(km, age)
+const basePrice = km*0.21
+let finalPrice;
+let discount;
+if (age < 18) {
+    discount = basePrice*20/100;
+    finalPrice = basePrice-discount;
+}
+console.log(km, age, basePrice, finalPrice)
