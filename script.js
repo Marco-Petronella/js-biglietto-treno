@@ -5,7 +5,7 @@
 // il prezzo del biglietto è definito in base ai km (0.21 € al km)
 // va applicato uno sconto del 20% per i minorenni
 // va applicato uno sconto del 40% per gli over 65.
-// L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo) 
+// L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo)
 // Questo richiederà un minimo di ricerca.
 
 // TIP:
@@ -15,21 +15,25 @@
 // 100km, 70 anni => prezzo corretto: €12.60
 
 const km = prompt("Quanti chilometri percorrere?");
-const age = prompt("Qual è l'età del viaggiatore?")
-const basePrice = km*0.21
+const age = prompt("Qual è l'età del viaggiatore?");
+const basePrice = km * 0.21;
 let finalPrice;
 let discount;
 let message;
-if (age < 18) {
-    discount = basePrice*20/100;
-    finalPrice = basePrice-discount;
+if (age > 0 && km > 0) {
+  if (age < 18) {
+    discount = (basePrice * 20) / 100;
+    finalPrice = (basePrice - discount).toFixed(2);
     message = "il prezzo per il ragazzo minorenne è di €" + finalPrice;
-} else if (age>=65) {
-    discount = basePrice*40/100;
-    finalPrice = basePrice-discount;
+  } else if (age >= 65) {
+    discount = (basePrice * 40) / 100;
+    finalPrice = (basePrice - discount).toFixed(2);
     message = "il prezzo per l'over 65 è di €" + finalPrice;
-} else {
-    finalPrice = basePrice;
+  } else {
+    finalPrice = basePrice.toFixed(2);
     message = "il prezzo è di €" + finalPrice;
+  }
+} else {
+  message = "non sono stati inseriti numeri computabili";
 }
 console.log(message);
