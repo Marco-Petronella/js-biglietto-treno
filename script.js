@@ -19,8 +19,17 @@ const age = prompt("Qual è l'età del viaggiatore?")
 const basePrice = km*0.21
 let finalPrice;
 let discount;
+let message;
 if (age < 18) {
     discount = basePrice*20/100;
     finalPrice = basePrice-discount;
+    message = "il prezzo per il ragazzo minorenne è di €" + finalPrice;
+} else if (age>=65) {
+    discount = basePrice*40/100;
+    finalPrice = basePrice-discount;
+    message = "il prezzo per l'over 65 è di €" + finalPrice;
+} else {
+    finalPrice = basePrice;
+    message = "il prezzo è di €" + finalPrice;
 }
-console.log(km, age, basePrice, finalPrice)
+console.log(message);
