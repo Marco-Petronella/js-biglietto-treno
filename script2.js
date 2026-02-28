@@ -9,16 +9,47 @@
 const age1 = Number(prompt("inserisci l'età del primo viaggiatore"));
 const age2 = Number(prompt("inserisci l'età del secondo viaggiatore"));
 let message;
-if (age1 < 0 || age2 <0) {
-    message = "sono state inserite età non valide. " +age1 +" " + age2;
-}
-else if (age1>age2) {
-    message = "il primo viaggiatore con " + age1 + "anni è il più vecchio, il secondo viaggiore ha " + age2 + "anni";
-}
-else if (age2>age1) {
-    message = "il secondo viaggiatore con " + age2 + "anni è il più vecchio, il primo viaggiore ha " + age1 + "anni";
-}
-else {
-    message = "i due viaggiatori hanno entrambi la stessa età con " + age1 + "anni";
-}
-console.log(message);
+ if (age1 < 0 || age2 <0) {
+     message = "sono state inserite età non valide. " +age1 +" " + age2;
+ }
+ else if (age1>age2) {
+     message = "il primo viaggiatore con " + age1 + "anni è il più vecchio, il secondo viaggiore ha " + age2 + "anni";
+ }
+ else if (age2>age1) {
+     message = "il secondo viaggiatore con " + age2 + "anni è il più vecchio, il primo viaggiore ha " + age1 + "anni";
+ }
+ else {
+     message = "i due viaggiatori hanno entrambi la stessa età con " + age1 + "anni";
+ }
+ console.log(message);
+
+
+const yourChoice = prompt("si vuole un numero pari o dispari?", "pari");
+const yourNumber = Number(prompt("scegliere un numero tra 1 e 9"));
+myNumber = parseInt(Math.random()*9);
+
+if (yourChoice != "pari" && yourChoice != "dispari") {
+    message = "non è stato inserito un valore valido tra pari o dispari";
+} else if (yourNumber<1 || yourNumber > 9) {
+    message = "non è stato inserito un numero valido per il pari o dispari";
+ } else {
+    oddOrEven= ((yourNumber+myNumber)%2);
+    if (yourChoice =="pari")
+        if (oddOrEven==0) {
+        message = "hai scelto pari ed hai vinto";
+    } else {
+        message = "hai scelto pari ed hai perso";
+    } else {
+        if (oddOrEven == 0) {
+            message = "hai scelto dispari ed hai perso";
+        } else {
+        message = "hai scelto dispari ed hai vinto";
+        }
+    }
+ }
+ console.log(message);
+ console.log("mio numero=" + myNumber);
+ console.log("tuo numero=" + yourNumber);
+ console.log("tua scelta=" + yourChoice );
+ 
+ 
