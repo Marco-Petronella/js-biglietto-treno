@@ -14,8 +14,9 @@
 // 100km, 10 anni => prezzo corretto:  €16.80
 // 100km, 70 anni => prezzo corretto: €12.60
 
-const km = prompt("Quanti chilometri percorrere?");
-const age = prompt("Qual è l'età del viaggiatore?");
+const km = Number(prompt("Quanti chilometri percorrere?"));
+const age = Number(prompt("Qual è l'età del viaggiatore?"));
+
 const basePrice = km * 0.21;
 let finalPrice;
 let discount;
