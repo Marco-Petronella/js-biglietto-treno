@@ -8,4 +8,17 @@
 
 const age1 = Number(prompt("inserisci l'età del primo viaggiatore"));
 const age2 = Number(prompt("inserisci l'età del secondo viaggiatore"));
-
+let message;
+if (age1 < 0 || age2 <0) {
+    message = "sono state inserite età non valide. " +age1 +" " + age2;
+}
+else if (age1>age2) {
+    message = "il primo viaggiatore con " + age1 + "anni è il più vecchio, il secondo viaggiore ha " + age2 + "anni";
+}
+else if (age2>age1) {
+    message = "il secondo viaggiatore con " + age2 + "anni è il più vecchio, il primo viaggiore ha " + age1 + "anni";
+}
+else {
+    message = "i due viaggiatori hanno entrambi la stessa età con " + age1 + "anni";
+}
+console.log(message);
